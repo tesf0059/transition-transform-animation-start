@@ -35,3 +35,130 @@
 	background-color: #e89380;
 	/*orange*/
 }
+
+/* Css Transisition */
+
+.transition .b1{
+	transition: width 1000ms ease-in-out;
+}
+.transition .b1:hover{
+	width: 400px;
+}
+
+.transition .h2{
+	transition: width 1000ms height 500ms;
+	transition-timing-function: ease-out;
+	/* transition-delay: 0.2s, 0.5s; */
+}
+
+.transition .b2:hover{
+	width: 300px;
+	height: 300px;
+}
+
+.transition .b3{
+	transition: transform 1s cubic-bezier(1, .16, .45,.46) 0.5s;
+}
+
+.transition .b4{
+	transition: all 1s ease ease-in;
+} 
+
+.transition .b4:hover{
+	background-color:rebeccapurple;
+	border-radius: 30px;
+}
+
+/* Css Transform */
+	
+.transform .box {
+	transition:all 1s ease-out 0.5s;
+}
+
+.transform {
+transform: all is ease-out 0.5;
+}
+
+.transform .b1:hover{
+	transform: translate(20px, 30px);
+}
+.transform .b2:hover{
+	transform:scale(1.4) ;
+}
+
+.transform .b3{
+	transform-origin: right top;
+}
+.transform .b3:hover{
+	transform:rotate(45deg) ;
+}
+
+.transform .b4{ 
+	transform: skewX(45deg) skewY(30deg);
+}
+.transform .b4:hover{
+	transform: skewX(0) skewY(0);
+}
+
+/* Css Animation */
+
+@keyframes chnageColor{
+	from{
+		background-color: #9696ff;
+	}
+	to{
+		background-color: #e89380;
+	}
+}
+
+.animation .b1{
+	animation-name: chnageColor;
+	animation-duration:2s ;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes moveAround{
+	0%{
+		transform: translate(0,0);
+	}
+
+	25%{
+		transform: translate(200px,0);
+	}
+
+	50%{
+		transform: translate(200px,200px);
+	}
+
+	75%{
+		transform: translate(0,200px);
+	}
+
+	100%{
+		transform: translate(0,0);
+	}
+}
+.animation .b2 {
+	animation: moveAround 4s;
+	animation-delay: 3s;
+	animation-iteration-count: 3;
+}
+
+@keyframes transformeMe {
+	0% {
+		transform: scale(0.5) rotate(0) translateX(0);
+	}
+	100% {
+		transform: scale(1) rotateX(180deg) translateX(600px);
+	}
+}
+
+.animation .b3 {
+	/* name, duration, timing function, delay, count, direction, fill */
+	animation: transformeMe 1.5s ease-out 3s 12 alternate forwards;
+}
+
+.animation .b3:active {
+	animation-play-state: paused;
+}
